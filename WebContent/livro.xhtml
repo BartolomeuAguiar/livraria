@@ -12,7 +12,7 @@
 			<h:panelGrid columns="2">
 
 				<h:outputLabel value="Titulo:" for="titulo" />
-				<h:inputText id="titulo" value="#{livroBean.livro.titulo}" />
+				<h:inputText id="titulo" value="#{livroBean.livro.titulo}"/>
 
 				<h:outputLabel value="ISBN:" for="isbn" />
 				<h:inputText id="isbn" value="#{livroBean.livro.isbn}" />
@@ -43,7 +43,30 @@
 		</fieldset>
 
 		<h:commandButton value="Gravar" action="#{livroBean.gravar}" />
+		
 	</h:form>
+	<h:datatable id="tabelaLivros" value="#{livroBean.livros}" var="livro">
+		<h:column>
+			<f:facet name="header">Título</f:facet>
+			<h:outputText value="#{livro.titulo}" />
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">ISBN</f:facet>
+			<h:outputText value="#{livro.isbn}" />
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Preço</f:facet>
+			<h:outputText value="#{livro.preco}" />
+		</h:column>
+		
+		<h:column>
+		    <f:facet name="header">Data</f:facet>
+		    <h:outputText value="#{livro.dataLancamento}" />
+  		</h:column>
+	</h:datatable>
+	
 </h:body>
 
 </html>
