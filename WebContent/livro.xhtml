@@ -45,7 +45,7 @@
 		<h:commandButton value="Gravar" action="#{livroBean.gravar}" />
 		
 	</h:form>
-	<h:datatable id="tabelaLivros" value="#{livroBean.livros}" var="livro">
+	<h:dataTable id="tabelaLivros" value="#{livroBean.livros}" var="livro">
 		<h:column>
 			<f:facet name="header">Título</f:facet>
 			<h:outputText value="#{livro.titulo}" />
@@ -65,7 +65,7 @@
 		    <f:facet name="header">Data</f:facet>
 		    <h:outputText value="#{livro.dataLancamento}" />
   		</h:column>
-	</h:datatable>
+	</h:dataTable>
 	
 </h:body>
 
